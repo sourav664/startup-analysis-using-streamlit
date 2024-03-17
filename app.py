@@ -3,6 +3,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+if "selected_model" not in st.session_state:
+    st.session_state.selected_model = None
+
+if "selected_threadcount" not in st.session_state:
+    st.session_state.selected_threadcount = 1
+
 st.set_page_config(layout='wide', page_title='Startup Analysis')
 df = pd.read_csv('startup_v1.csv', index_col=False).drop(columns=['Unnamed: 0'])
 df['month'] = pd.to_datetime(df['date']).dt.month
@@ -83,8 +89,16 @@ st.sidebar.title('Startup Funding Analyis')
 option = st.sidebar.selectbox('Select One',['Overall Analysis','StartUp','Investor'])
 
 if option == 'Overall Analysis':
-    # btn0 = st.sidebar.button('Show Overall Analysis')
-    # if btn0:
+    btn0 = st.sidebar.button('Show Overall Analysis')
+    
+    #Initialize sesion state
+    if 'load_state' not in st.session_state:
+        st.session_state.load_state = False
+        
+        
+    if btn0 or st.session_state.load_state:
+        st.session_state.load_state = True
+        
         load_overall_analysis()
 
 elif option == 'StartUp':
