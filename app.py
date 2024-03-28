@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
 
-if "selected_model" not in st.session_state:
-    st.session_state.selected_model = None
+# if "selected_model" not in st.session_state:
+#     st.session_state.selected_model = None
 
-if "selected_threadcount" not in st.session_state:
-    st.session_state.selected_threadcount = 1
+# if "selected_threadcount" not in st.session_state:
+#     st.session_state.selected_threadcount = 1
 
 st.set_page_config(layout='wide', page_title='Startup Analysis')
 df = pd.read_csv('startup_v1.csv', index_col=False).drop(columns=['Unnamed: 0'])
