@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.express as px
+import seaborn as sns
 
 if "selected_model" not in st.session_state:
     st.session_state.selected_model = None
@@ -11,7 +13,8 @@ if "selected_threadcount" not in st.session_state:
 
 st.set_page_config(layout='wide', page_title='Startup Analysis')
 df = pd.read_csv('startup_v1.csv', index_col=False).drop(columns=['Unnamed: 0'])
-df['month'] = pd.to_datetime(df['date']).dt.month
+
+
 
 def load_overall_analysis():
     st.title('Overall Analysis')
@@ -48,11 +51,61 @@ def load_overall_analysis():
     else:
         temp_df = df.groupby(['year','month'], as_index=False)['amount'].count() 
     
-    temp_df['x_axis'] = temp_df['month'].astype('str') + '-' + temp_df['year'].astype('str')
-    fig, ax = plt.subplots()
-    ax.plot(temp_df['x_axis'], temp_df['amount'])
-
-    st.pyplot(fig)
+    temp_df['month_wise'] = temp_df['month'].astype('str') + '-' + temp_df['year'].astype('str')
+    
+    fig = px.line(temp_df, x='month_wise', y='amount', width=900)
+    st.plotly_chart(fig, theme=None)
+    
+    
+    
+    option = st.selectbox('Sector', ['Amount','Count'])
+    
+    if option == 'Amount':
+        temp_df = df.groupby('vertical', as_index=False)['amount'].sum().sort_values(by='amount', ascending=False).head(20)
+        v = 'amount'
+    else:
+        temp_df = df['vertical'].value_counts().reset_index().head(20)
+        v = 'count'
+    
+    fig = px.pie(temp_df, values=v, names='vertical')
+    st.plotly_chart(fig, theme='streamlit')  
+    
+    select = st.selectbox('Funding',['Type of funding', 'City wise funding'])
+    
+    if select == 'Type of funding':
+        temp_df = df['round'].value_counts().reset_index().head(10)
+        b = 'count'
+        n = 'round'
+    else:
+        temp_df = df.groupby('city', as_index=False)['amount'].sum().sort_values(by='amount', ascending=False).head(20)
+        b = 'amount'
+        n = 'city'
+        
+    fig = px.pie(temp_df, values=b, names=n)
+    st.plotly_chart(fig, theme='streamlit')  
+    
+    st.header('Top Startups')
+    top = st.selectbox('Startup',df.groupby('startup')['amount'].sum().sort_values(ascending=False).head(10).index.tolist())
+    top_startup = df[df['startup'] == top]
+    opt = st.radio('Analysis',["Year wise Investments","Overall"])
+    if opt == 'Year wise Investments':
+        
+        t = top_startup.groupby('year')['amount'].sum()
+        fig = plt.figure(figsize=(10,6))
+        ax = sns.barplot( x=t.index, y=t.values, estimator='sum', errorbar=None)
+        ax.bar_label(ax.containers[0], fontsize=10)
+        st.pyplot(fig)
+    
+    else:
+        st.dataframe(top_startup)
+        fig = px.bar(top_startup, x='investors', y='amount',  color='round', text_auto=True)
+        st.plotly_chart(fig, theme='streamlit') 
+     
+    st.header('Top Investors')
+    top = st.selectbox('Investors',df.groupby('investors')['amount'].sum().sort_values(ascending=False).head(10).index.tolist())
+    investors = df[df['investors'] == top]
+    fig = px.bar(investors, x='startup', y='amount', color='year', text_auto=True)
+    st.plotly_chart(fig, theme='streamlit')    
         
 def load_investor_details(investor):
     st.title(investor)
@@ -65,18 +118,30 @@ def load_investor_details(investor):
     with col1:
         big5_series = df[df['investors'].str.contains(investor)].groupby('startup')['amount'].sum().sort_values(ascending=False).head()
         st.subheader('Biggest Investments')
-        fig, ax = plt.subplots()
-        ax.bar(big5_series.index, big5_series.values)
-        st.pyplot(fig)
+   
+        fig =px.bar(x=big5_series.index, y=big5_series.values, width=400,height=400)
+        st.plotly_chart(fig, theme='streamlit')  
         
     with col2:
         vertical5_series = df[df['investors'].str.contains(investor)].groupby('vertical')['amount'].sum().sort_values(ascending=False).head(10)
-        st.subheader('Top 10 Sectors Invested in')
-        fig, ax = plt.subplots()
-        ax.pie(vertical5_series,labels=vertical5_series.index, autopct='%.2f%%')
-        st.pyplot(fig)
-        
+        st.subheader('Sectors Invested in')
+        fig = px.pie(values=vertical5_series.values, names=vertical5_series.index, width=400, height=400)
+        st.plotly_chart(fig, theme='streamlit') 
+    col3, col4 = st.columns(2)
     
+    with col3:
+        ro = pd.DataFrame(df[df['investors'].str.contains(investor)].groupby('round')['amount'].sum().sort_values(ascending=False)).reset_index()
+        st.subheader('Stages')
+        fig = px.pie(ro, values='amount', names='round',width=350, height=350)
+        st.plotly_chart(fig, theme=None)
+        
+    with col4:
+        ro = pd.DataFrame(df[df['investors'].str.contains(investor)].groupby('city')['amount'].sum().sort_values(ascending=False)).reset_index()
+        st.subheader('City wise Investments')
+        fig = px.pie(ro, values='amount', names='city',width=350, height=350)
+        st.plotly_chart(fig, theme=None)
+            
+
     year_series = df[df['investors'].str.contains(investor)].groupby('year')['amount'].sum()
     st.subheader('YoY Investments')
     fig, ax = plt.subplots()
@@ -85,6 +150,7 @@ def load_investor_details(investor):
     st.pyplot(fig)
     
     
+     
 st.sidebar.title('Startup Funding Analyis')
 option = st.sidebar.selectbox('Select One',['Overall Analysis','StartUp','Investor'])
 
