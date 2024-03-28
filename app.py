@@ -149,8 +149,22 @@ def load_investor_details(investor):
     ax.set_xlim(2014,2020)
     st.pyplot(fig)
     
+def startup_analysis(startup):
+    st.title(startup)
+    startup = df[df['startup'].str.contains(startup)]
+    industry = startup['vertical'].values[0]
+    sub_industry = startup['subvertical'].values[0] 
+    city = startup['city'].values[0]
     
-     
+    col1, col2 = st.columns(2)
+    col1.metric("Industry", industry ,)
+    col2.metric("Sub-Industry", sub_industry)
+    st.metric("Location", city)
+    
+    startup['Date'] = startup['month'].astype('str') + '-' + startup['year'].astype('str')
+    fig = px.bar(startup, y='amount',  x='Date', color='investors', text='round', width=1000, height=500)
+    st.plotly_chart(fig, theme='streamlit') 
+        
 st.sidebar.title('Startup Funding Analyis')
 option = st.sidebar.selectbox('Select One',['Overall Analysis','StartUp','Investor'])
 
@@ -168,9 +182,19 @@ if option == 'Overall Analysis':
         load_overall_analysis()
 
 elif option == 'StartUp':
-    st.sidebar.selectbox('Select StartUp',sorted(df['startup'].unique().tolist()))
+    selected_startup = st.sidebar.selectbox('Select StartUp',sorted(df['startup'].unique().tolist()))
     btn1 = st.sidebar.button('Find StartUp Details')
-    st.title('StartUp Analysis')
+    
+    #Initialize sesion state
+    if 'load_state' not in st.session_state:
+        st.session_state.load_state = False
+        
+        
+    if btn1 or st.session_state.load_state:
+        st.session_state.load_state = True
+        
+        startup_analysis(selected_startup) 
+    
 else:
      selected_investors = st.sidebar.selectbox('Select StartUp',sorted(set(df['investors'].str.split(',').sum())))
      btn2 = st.sidebar.button('Find investors Details')

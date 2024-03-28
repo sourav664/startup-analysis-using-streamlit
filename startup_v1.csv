@@ -1,5 +1,5 @@
 ,date,startup,vertical,subvertical,city,investors,round,amount,year,month
-0,2020-09-01,BYJU’S,E-Tech,E-learning,Bengaluru,Tiger Global Management,Private Equity Round,1650.0,2020,9
+0,2020-09-01,BYJU’S,Ed-Tech,E-learning,Bengaluru,Tiger Global Management,Private Equity Round,1650.0,2020,9
 1,2020-01-13,Shuttl,Transportation,App based shuttle service,Gurgaon,Susquehanna Growth Equity,Series C,66.3992505,2020,1
 2,2020-09-01,Mamaearth,E-Commerce,Retailer of baby and toddler products,Bengaluru,Sequoia Capital India,Series B,151.460595,2020,9
 3,2020-02-01,Wealthbucket,FinTech,Online Investment,New Delhi,Vinod Khatumal,Pre-series A,24.75,2020,2
@@ -63,7 +63,7 @@
 61,2019-03-07,Ola Cabs,Transport,Cabs,Kormangala,"DIG Investment Ab, Deshe Holdings, Samih Toukan and Hussam Khoury",Series J,8.25,2019,3
 62,2019-01-07,Uniphore,Artificial Intelligence,Speech Recognition,Taramani,March Capital Partners,Series C,314.16,2019,1
 63,2019-04-07,Daalchini Technologies,Food and Beverage,Digital Vending Machine,New Delhi,Artha Venture,Seed Funding,4.125,2019,4
-64,2019-10-07,BYJU'S,EdTech,Education,Bengaluru,Qatar Investment Authority,Private Equity Round,1237.5,2019,10
+64,2019-10-07,BYJU'S,Ed-Tech,E-learning,Bengaluru,Qatar Investment Authority,Private Equity Round,1237.5,2019,10
 65,2019-11-07,Moglix,E-Commerce,Industrial Tools and Equipments,Singapore,"Composite Capital Management, Sequoia Capital India, Tiger Global Management",Series D,495.0,2019,11
 66,2019-10-07,Ezyhaul,Tech,Logistics,Singapore,Undisclosed,Series B,132.0,2019,10
 67,2019-10-07,Indus OS,Tech,Smartphone Operating System,Andheri,Ventureast,Series B,47.4375,2019,10
@@ -688,7 +688,7 @@
 686,2017-07-21,Monsoon Fintech,Technology,Machine Learning Access platform,New Delhi,"Sunil Kalra, Aditya Singh, Rishi Srivastava, Rajan Anandan",Seed Funding,0.0,2017,7
 687,2017-07-21,MonkeyBox,Consumer Internet,Healthy Food Delivery Platform,Bangalore,"Blume Ventures, NB Ventures, Nspira",Seed Funding,0.0,2017,7
 688,2017-07-25,Noticeboard,Consumer Internet,Mobile-first Enterprise communication platform,Bangalore,"Stellaris Venture Partners,",Private Equity,9.9,2017,7
-689,2017-07-25,BYJU'S,Consumer Internet,Mobile Learning App,Bangalore,Tencent Holdings,Private Equity,288.75,2017,7
+689,2017-07-25,BYJU'S,Ed-Tech,E-learning,Bangalore,Tencent Holdings,Private Equity,288.75,2017,7
 690,2017-07-26,Creater Gurukul,Others,Co-Working Space Provider,New Delhi,Yuvraj Singh,Seed Funding,0.0,2017,7
 691,2017-07-26,Fab Hotels,Consumer Internet,Budget hotels brand & Aggregator Platform,New Delhi,Goldman Sachs,Private Equity,206.25,2017,7
 692,2017-07-26,ThinkerBell,Consumer Internet,Assisted Learning Startup,Bangalore,"Indian Angel Network, Anand Mahindra",Seed Funding,1.65,2017,7
@@ -958,7 +958,7 @@
 956,2017-03-29,Zapyle,E-Commerce,Luxury Fashion Marketplace,Bangalore,Undisclosed Investors,Seed Funding,0.0,2017,3
 957,2017-03-29,Ithaka,Consumer Internet,Vacation Trip Planning platform,Mumbai,"Ankit Gupta, Puneet Motihar",Seed Funding,2.68125,2017,3
 958,2017-03-29,perpule,E-Commerce,Self-Checkout ECommerce App,Bangalore,KStart Capital,Seed Funding,5.3625,2017,3
-959,2017-03-29,BYJU'S,Consumer Internet,Online Education Platform,Bangalore,Verlinvest,Private Equity,0.0,2017,3
+959,2017-03-29,BYJU'S,Ed-Tech,E-learning,Bangalore,Verlinvest,Private Equity,0.0,2017,3
 960,2017-03-29,Licious,E-Commerce,Online Meat Ordering platform,Bangalore,"Mayfield India, 3one4 Capital, Sistema Asia Fund, Neoplux Technology Fund",Private Equity,82.5,2017,3
 961,2017-03-29,Medinfi,Consumer Internet,Doctor & Hospital search Platform,Bangalore,"Vinod Martin, Hemant Kaul, Prof. Ram Kumar Kakani & Others",Seed Funding,0.4125,2017,3
 962,2017-03-30,Indus OS,Technology,Mobile OS creator,Mumbai,"JSW Ventures, VenturEast",Private Equity,0.0,2017,3
@@ -1139,7 +1139,7 @@
 1137,2016-12-20,VivoCarat,E-Commerce,Online jewellery marketplace,Mumbai,Undisclosed Investors,Seed Funding,0.4125,2016,12
 1138,2016-12-20,Tiyo,Consumer Internet,Doctor Search Mobile App,Kolkata,Ajith Nair,Seed Funding,0.0,2016,12
 1139,2016-12-20,Zoomcar,Consumer Internet,Self-Driven Cab booking platform,Bangalore,Cyber Carrier CL,Private Equity,0.0,2016,12
-1140,2016-12-20,BYJU'S,Consumer Internet,Online Learning platform,Bangalore,International Financial Corporation,Private Equity,123.75,2016,12
+1140,2016-12-20,BYJU'S,Ed-Tech,E-learning,Bangalore,International Financial Corporation,Private Equity,123.75,2016,12
 1141,2016-12-21,Supr Daily,Consumer Internet,Daily Subscription based Delivery service,Mumbai,"Dr. Apoorv Ranjan Sharma, Anil Jain, Anuj Golecha, Krishna Jhunjhunwala, Anirudh Damani",Seed Funding,0.0,2016,12
 1142,2016-12-21,The BlueBook,Consumer Internet,online to offline marketing platform,Bangalore,"Indian Angel Network, Lets Venture",Seed Funding,4.125,2016,12
 1143,2016-12-21,MamaEarth,E-Commerce,Babycare Products seller,New Delhi,Fireside Ventures & Others,Seed Funding,0.0,2016,12
@@ -1331,7 +1331,7 @@
 1329,2016-07-09,Prozo,E-Commerce,Study Material Marketplace,Gurgaon,"Earlsfield Capital, Sailender Solanki, Rajiv Solanki",Seed Funding,2.59875,2016,7
 1330,2016-08-09,TopRankers,Education,Online Test Preparation platform,Bangalore,"CareerNet Consulting Pvt. Ltd, Ideation Initiative Pvt. Ltd,",Seed Funding,5.5275,2016,8
 1331,2016-08-09,BuildTraders,E-Commerce,Online Construction Materials Marketplace,Bangalore,Idein Ventures,Seed Funding,1.65,2016,8
-1332,2016-09-09,BYJU'S,Education,Online Learning App,Bangalore,"Chan Zuckerberg Initiative, Times Internet Ltd, Sequoia Capital, Sofina, Lightspeed Ventures",Private Equity,412.5,2016,9
+1332,2016-09-09,BYJU'S,Ed-Tech,E-learning,Bangalore,"Chan Zuckerberg Initiative, Times Internet Ltd, Sequoia Capital, Sofina, Lightspeed Ventures",Private Equity,412.5,2016,9
 1333,2016-09-09,NoBroker,Consumer Internet,Online Home Rental platform,Bangalore,Anand Chandrasekaran,Seed Funding,0.0,2016,9
 1334,2016-10-09,Freshboxx,E-Commerce,Fruits & vegetable eTailer,Hubli,Ravi Linganuri,Seed Funding,0.0,2016,10
 1335,2016-10-09,CureInstant,Consumer Internet,Social Health Networking Platform,New Delhi,Dr. Rameshwar Kumar,Seed Funding,1.2375,2016,10
@@ -1851,7 +1851,7 @@
 1849,2016-03-21,OneClickWash,Consumer Internet,Online Laundry & Washing service Booking & Delivery,Gurgaon,Unitus Seed Fund,Seed Funding,0.0,2016,3
 1850,2016-03-21,Girnar Software,Consumer Internet,Online News Media Network,Jaipur,Google Capital,Private Equity,0.0,2016,3
 1851,2016-03-21,Room On Call,Consumer Internet,Budget hotel aggregator,Gurgaon,CASHurDRIVE Marketing Pvt Ltd,Private Equity,16.5,2016,3
-1852,2016-03-22,BYJU'S,Consumer Internet,Educational Video Content Creator,Bangalore,"Sequoia India, Sofina",Private Equity,618.75,2016,3
+1852,2016-03-22,BYJU'S,Ed-Tech,E-learning,Bangalore,"Sequoia India, Sofina",Private Equity,618.75,2016,3
 1853,2016-03-22,BigBasket,E-Commerce,Online Grocery Shop,Bangalore,Abraaj Group,Private Equity,1237.5,2016,3
 1854,2016-03-22,DrivoJoy,Consumer Internet,On-demand 2-wheeler Servicing platform,Bangalore,"Indian Angel Network, Tracxn Labs & Others",Seed Funding,4.95,2016,3
 1855,2016-03-22,Smartron,Technology,Internet of Things Device manufacturer,Bangalore,Sachin Tendulkar,Private Equity,0.0,2016,3
